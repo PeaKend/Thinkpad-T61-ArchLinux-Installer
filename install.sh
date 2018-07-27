@@ -44,7 +44,7 @@ printf "127.0.0.1\tlocalhost\n::1\tlocalhost\n127.0.1.1\t$domainserver.localdoma
 
 clear
 
-printf "Go and make yourself a coffe, this is going to take a lot of time.\n\n"
+printf "Go and make yourself a coffe, this is going to take a while.\n\n"
 
 printf "Creating initframs.\n\n"
 
