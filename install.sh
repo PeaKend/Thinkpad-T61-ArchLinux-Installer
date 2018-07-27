@@ -57,6 +57,8 @@ clear
 
 printf "Installing yaourt.\n\n"
 
+su $userName
+
 git clone https://aur.archlinux.org/package-query.git
 cd package-query
 makepkg -si
@@ -77,8 +79,6 @@ cd ..
 rm -rf YosemiteSanFranciscoFont
 
 printf "Installing rcs.\n\n"
-
-su $userName
 
 rm -rf ~/.bashrc
 mv .bashrc ~/.bashrc
