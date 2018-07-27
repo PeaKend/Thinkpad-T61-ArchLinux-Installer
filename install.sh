@@ -112,7 +112,7 @@ su $userName cp compton.conf ~/.config/compton.conf
 
 printf "Installing GRUB\n\n"
 
-grub-install --target=i386-pc /dev/sda
 rm -rf /etc/default/grub
 mv grub /etc/default/grub
+grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
