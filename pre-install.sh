@@ -21,24 +21,25 @@ timedatectl set-ntp true
 printf "Done.\n\n"
 
 printf "Partitioning disks.\n\n"
+disk="/dev/sda"
 
 printf "Deleting GPT and MBR.\n\n"
 
-printf "x\nz\ny\ny\n" | gdisk /dev/sda 1>/dev/null
+printf "x\nz\ny\ny\n" | gdisk $disk 1>/dev/null
 
 printf "Making GPT.\n\n"
 
-printf "n\n\n\n+1M\nef02\nn\n\n\n+8G\n8200\nn\n\n\n\n\nw\ny\n" | gdisk /dev/sda 1>/dev/null
+printf "n\n\n\n+1M\nef02\nn\n\n\n+8G\n8200\nn\n\n\n\n\nw\ny\n" | gdisk $disk 1>/dev/null
 
 printf "Formating partitions.\n\n"
 
-mkswap /dev/sda2 1>/dev/null
-swapon /dev/sda2 1>/dev/null
-mkfs.ext4 /dev/sda3 1>/dev/null
+mkswap $(disk)2 1>/dev/null
+swapon $(disk)2 1>/dev/null
+mkfs.ext4 $(disk)3 1>/dev/null
 
 printf "Mounting file systems.\n\n"
 
-mount /dev/sda3 /mnt 1>/dev/null
+mount $(disk)3 /mnt 1>/dev/null
 
 printf "Configuring pacman mirrorlist\n\n"
 rm -rf /etc/pacman.d/mirrorlist
