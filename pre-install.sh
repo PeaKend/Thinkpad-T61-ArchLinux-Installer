@@ -45,3 +45,15 @@ clear
 printf "Time to download the OS.\n\n"
 
 pacstrap /mnt base base-devel
+
+clear
+
+printf "Generating the fstab file.\n\n"
+
+genfstab -U /mnt >> /mnt/etc/fstab
+
+printf "Entering your new system.\n\n"
+
+arch-chroot /mnt
+
+echo "Hello system!.\n\n"
