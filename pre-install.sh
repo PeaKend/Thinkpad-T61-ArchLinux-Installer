@@ -30,4 +30,18 @@ printf "Making GPT.\n\n"
 
 printf "n\n\n\n+1M\nef02\nn\n\n\n+8G\n8200\nn\n\n\n\n\nw\ny\n" | gdisk /dev/sda 1>/dev/null
 
-printf "Partitioning disk\n\n"
+printf "Formating partitions.\n\n"
+
+mkswap /dev/sda2
+swapon /dev/sda2
+mksf.ext4 /dev/sda3
+
+printf "Mounting file systems.\n\n"
+
+mount /dev/sda3 /mnt
+
+clear
+
+printf "Time to download the OS.\n\n"
+
+pacstrap /mnt base base-devel
