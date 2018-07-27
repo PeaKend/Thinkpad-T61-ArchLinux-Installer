@@ -72,10 +72,11 @@ rm -rf /etc/yaourtrc
 cp yaourtrc /etc/yaourtrc
 
 printf "Cloning and installing Yosemite San Francisco Font\n\n"
-git clone https://github.com/supermarin/YosemiteSanFranciscoFont
 
+git clone https://github.com/supermarin/YosemiteSanFranciscoFont
 cd YosemiteSanFranciscoFont/
-su $userName cp *.ttf ~/.fonts
+mkdir /home/$userName/.fonts
+cp *.ttf /home/$userName/.fonts
 cd ..
 rm -rf YosemiteSanFranciscoFont
 
