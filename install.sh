@@ -27,12 +27,12 @@ printf "127.0.0.1\tlocalhost\n::1\tlocalhost\n127.0.1.1\t$domainserver.localdoma
 
 printf "Creating initframs.\n\n"
 
-mkinitcipio -p linux
+mkinitcpio -p linux
 
 printf "Now lets create a password for root\n\n"
 
 printf "Password for root:\n"
-psswd
+passwd
 
 printf "And lets add a user, with the name...\n\n"
 read userName
