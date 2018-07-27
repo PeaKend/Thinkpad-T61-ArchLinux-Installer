@@ -82,6 +82,10 @@ rm -rf YosemiteSanFranciscoFont
 
 printf "Installing rcs.\n\n"
 
+rm -rf /home/$userName/.Wallpapers
+mkdir /home/$userName/.Wallpapers
+cp Wallpaper1.png /home/$userName/.Wallpapers
+
 rm -rf /home/$userName/.xinitrc
 cp .xinitrc /home/$userName/.xinitrc
 
