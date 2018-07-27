@@ -110,6 +110,9 @@ cp settings.ini /home/$userName/.config/gtk-3.0
 rm -rf /home/$userName/.config/compton.conf
 cp compton.conf /home/$userName/.config/compton.conf
 
+rm -rf /home/$userName/.i3blocks.conf
+cp .i3blocks.conf /home/$userName/.i3blocks.conf
+
 printf "Installing GRUB\n\n"
 
 rm -rf /etc/default/grub
