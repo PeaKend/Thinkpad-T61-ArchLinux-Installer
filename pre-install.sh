@@ -20,10 +20,14 @@ timedatectl set-ntp true
 
 printf "Done.\n\n"
 
-printf "Partitioning disks\n\n"
+printf "Partitioning disks.\n\n"
 
-printf "Deleting GPT and MBR\n"
+printf "Deleting GPT and MBR.\n\n"
 
 printf "x\nz\ny\ny\n" | gdisk /dev/sda 1>/dev/null
 
-printf "Making GPT\n"
+printf "Making GPT.\n\n"
+
+printf "n\n\n\n+1M\nef02\nn\n\n\n+8G\n8200\nn\n\n\n\n\nw\ny\n" | gdisk /dev/sda 1>/dev/null
+
+printf "Partitioning disk\n\n"
