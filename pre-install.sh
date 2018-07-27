@@ -42,9 +42,9 @@ mount /dev/sda3 /mnt 1>/dev/null
 
 printf "Configuring pacman mirrorlist\n\n"
 rm -rf /etc/pacman.d/mirrorlist
-mv mirrorlist /etc/pacman.d/mirrorlist
+cp mirrorlist /etc/pacman.d/mirrorlist
 rm -rf /etc/pacman.conf
-mv pacman.conf /etc/pacman.conf
+cp pacman.conf /etc/pacman.conf
 
 clear
 
