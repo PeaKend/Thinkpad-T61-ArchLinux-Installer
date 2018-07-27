@@ -81,34 +81,34 @@ rm -rf YosemiteSanFranciscoFont
 
 printf "Installing rcs.\n\n"
 
-su $userName rm -rf ~/.xinitrc
-su $userName cp .xinitrc ~/.xinitrc
+rm -rf /home/$userName/.xinitrc
+cp .xinitrc /home/$userName/.xinitrc
 
-su $userName rm -rf ~/.bashrc
-su $userName cp .bashrc ~/.bashrc
+rm -rf /home/$userName/.bashrc
+cp .bashrc /home/$userName/.bashrc
 
-su $userName rm -rf ~/.bash_profile
-su $userName cp .bash_profile ~/.bash_profile
+rm -rf /home/$userName/.bash_profile
+cp .bash_profile /home/$userName/.bash_profile
 
-su $userName rm -rf ~/.Xresources
-su $userName cp .Xresources ~/.Xresources
+rm -rf /home/$userName/.Xresources
+cp .Xresources /home/$userName/.Xresources
 
-su $userName mkdir ~/.config/
-su $userName mkdir ~/.config/i3
-su $userName cp config ~/.config/i3
+mkdir /home/$userName/.config/
+mkdir /home/$userName/.config/i3
+cp config /home/$userName/.config/i3
 
-su $userName rm -rf ~/.i3blocks.conf
-su $userName cp .i3blocks.conf ~/.i3blocks.conf
+rm -rf /home/$userName/.i3blocks.conf
+cp .i3blocks.conf /home/$userName/.i3blocks.conf
 
-su $userName rm -rf ~/.gtkrc-2.0
-su $userName cp .gtkrc-2.0 ~/.gtkrc-2.0
+rm -rf /home/$userName/.gtkrc-2.0
+cp .gtkrc-2.0 /home/$userName/.gtkrc-2.0
 
-su $userName rm -rf ~/.config/gtk-3.0
-su $userName mkdir ~/.config/gtk-3.0
-su $userName cp settings.ini ~/.config/gtk-3.0
+rm -rf /home/$userName/.config/gtk-3.0
+mkdir /home/$userName/.config/gtk-3.0
+cp settings.ini /home/$userName/.config/gtk-3.0
 
-su $userName rm -rf ~/.config/compton.conf
-su $userName cp compton.conf ~/.config/compton.conf
+rm -rf /home/$userName/.config/compton.conf
+cp compton.conf /home/$userName/.config/compton.conf
 
 printf "Installing GRUB\n\n"
 
