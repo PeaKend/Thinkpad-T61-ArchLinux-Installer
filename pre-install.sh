@@ -40,6 +40,10 @@ printf "Mounting file systems.\n\n"
 
 mount /dev/sda3 /mnt 1>/dev/null
 
+printf "Configuring pacman mirrorlist\n\n"
+rm -rf /etc/pacman.d/mirrorlist
+mv mirrorlist /etc/pacman.d/mirrorlist
+
 clear
 
 printf "Time to download the OS.\n\n"
