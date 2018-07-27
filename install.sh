@@ -79,6 +79,9 @@ rm -rf YosemiteSanFranciscoFont
 
 printf "Installing rcs.\n\n"
 
+su $userName rm -rf ~/.xinitrc
+su $userName mv .xinitrc ~/.xinitrc
+
 su $userName rm -rf ~/.bashrc
 su $userName mv .bashrc ~/.bashrc
 
@@ -104,3 +107,10 @@ su $userName mv settings.ini ~/.config/gtk-3.0
 
 su $userName rm -rf ~/.config/compton.conf
 su $userName cp compton.conf ~/.config/compton.conf
+
+printf "Installing GRUB\n\n"
+
+grub-install --target=i386-pc /dev/sda
+rm -rf /etc/default/grub
+mv grub /etc/default/grub
+grub-mkconfig -o /boot/grub/grub.cfg
