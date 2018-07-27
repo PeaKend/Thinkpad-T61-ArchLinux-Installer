@@ -24,20 +24,20 @@ hwclock --systohc
 printf "Configuring locale.gen.\n\n"
 
 rm -rf /etc/locale.gen 
-mv locale.gen /etc/locale.gen
+cp locale.gen /etc/locale.gen
 locale-gen
 
 printf "Setting language to english.\n\n"
 
 rm -rf /etc/locale.conf
-mv locale.conf /etc/locale.conf
+cp locale.conf /etc/locale.conf
 
 printf "Making configurations.\n\n"
 
 rm -rf /etc/pacman.conf
-mv pacman.conf /etc/pacman.conf
+cp pacman.conf /etc/pacman.conf
 rm -rf /etc/pacman.d/mirrorlist
-mv mirrorlist /etc/pacman.d/mirrorlist
+cp mirrorlist /etc/pacman.d/mirrorlist
 
 printf "$domainserver" > /etc/hostname
 printf "127.0.0.1\tlocalhost\n::1\tlocalhost\n127.0.1.1\t$domainserver.localdomain\t$domainserver" > /etc/hosts
@@ -69,43 +69,43 @@ cd ..
 rm -rf package-query
 rm -rf yaourt
 rm -rf /etc/yaourtrc
-mv yaourtrc /etc/yaourtrc
+cp yaourtrc /etc/yaourtrc
 
 printf "Cloning and installing Yosemite San Francisco Font\n\n"
 git clone https://github.com/supermarin/YosemiteSanFranciscoFont
 
 cd YosemiteSanFranciscoFont/
-su $userName mv *.ttf ~/.fonts
+su $userName cp *.ttf ~/.fonts
 cd ..
 rm -rf YosemiteSanFranciscoFont
 
 printf "Installing rcs.\n\n"
 
 su $userName rm -rf ~/.xinitrc
-su $userName mv .xinitrc ~/.xinitrc
+su $userName cp .xinitrc ~/.xinitrc
 
 su $userName rm -rf ~/.bashrc
-su $userName mv .bashrc ~/.bashrc
+su $userName cp .bashrc ~/.bashrc
 
 su $userName rm -rf ~/.bash_profile
-su $userName mv .bash_profile ~/.bash_profile
+su $userName cp .bash_profile ~/.bash_profile
 
 su $userName rm -rf ~/.Xresources
-su $userName mv .Xresources ~/.Xresources
+su $userName cp .Xresources ~/.Xresources
 
 su $userName mkdir ~/.config/
 su $userName mkdir ~/.config/i3
-su $userName mv config ~/.config/i3
+su $userName cp config ~/.config/i3
 
 su $userName rm -rf ~/.i3blocks.conf
-su $userName mv .i3blocks.conf ~/.i3blocks.conf
+su $userName cp .i3blocks.conf ~/.i3blocks.conf
 
 su $userName rm -rf ~/.gtkrc-2.0
-su $userName mv .gtkrc-2.0 ~/.gtkrc-2.0
+su $userName cp .gtkrc-2.0 ~/.gtkrc-2.0
 
 su $userName rm -rf ~/.config/gtk-3.0
 su $userName mkdir ~/.config/gtk-3.0
-su $userName mv settings.ini ~/.config/gtk-3.0
+su $userName cp settings.ini ~/.config/gtk-3.0
 
 su $userName rm -rf ~/.config/compton.conf
 su $userName cp compton.conf ~/.config/compton.conf
@@ -113,6 +113,6 @@ su $userName cp compton.conf ~/.config/compton.conf
 printf "Installing GRUB\n\n"
 
 rm -rf /etc/default/grub
-mv grub /etc/default/grub
+cp grub /etc/default/grub
 grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
