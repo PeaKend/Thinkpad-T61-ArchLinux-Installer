@@ -68,6 +68,8 @@ su $userName makepkg -si
 cd ..
 rm -rf package-query
 rm -rf yaourt
+rm -rf /etc/yaourtrc
+mv yaourtrc /etc/yaourtrc
 
 printf "Cloning and installing Yosemite San Francisco Font\n\n"
 git clone https://github.com/supermarin/YosemiteSanFranciscoFont
