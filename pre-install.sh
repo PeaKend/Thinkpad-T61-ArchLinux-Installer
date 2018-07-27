@@ -32,13 +32,13 @@ printf "n\n\n\n+1M\nef02\nn\n\n\n+8G\n8200\nn\n\n\n\n\nw\ny\n" | gdisk /dev/sda 
 
 printf "Formating partitions.\n\n"
 
-mkswap /dev/sda2
-swapon /dev/sda2
-mksf.ext4 /dev/sda3
+mkswap /dev/sda2 1>/dev/null
+swapon /dev/sda2 1>/dev/null
+mksf.ext4 /dev/sda3 1>/dev/null
 
 printf "Mounting file systems.\n\n"
 
-mount /dev/sda3 /mnt
+mount /dev/sda3 /mnt 1>/dev/null
 
 clear
 
