@@ -16,10 +16,14 @@ done
 
 printf "Setting timedate...\n"
 
-#timedatectl set-ntp true
+timedatectl set-ntp true
 
-printf "Done\n\n"
+printf "Done.\n\n"
 
-printf "Partitioning disks\n "
+printf "Partitioning disks\n\n"
 
+printf "Deleting GPT and MBR\n"
 
+printf "x\nz\ny\ny\n" | gdisk /dev/sda 1>/dev/null
+
+printf "Making GPT\n"
