@@ -34,7 +34,7 @@ printf "Formating partitions.\n\n"
 
 mkswap /dev/sda2 1>/dev/null
 swapon /dev/sda2 1>/dev/null
-mksf.ext4 /dev/sda3 1>/dev/null
+mkfs.ext4 /dev/sda3 1>/dev/null
 
 printf "Mounting file systems.\n\n"
 
