@@ -11,6 +11,7 @@ read userName
 
 useradd -m -g wheel $userName
 passwd $userName
+printf "\n$userName ALL=(ALL) ALL" >> /etc/sudoers
 
 printf "Setting timezone (Argentina)\n\n"
 
@@ -57,15 +58,13 @@ clear
 
 printf "Installing yaourt.\n\n"
 
-su $userName
-
 git clone https://aur.archlinux.org/package-query.git
 cd package-query
-makepkg -si
+su $userName makepkg -si
 cd ..
 git clone https://aur.archlinux.org/yaourt.git
 cd yaourt
-makepkg -si
+su $userName makepkg -si
 cd ..
 rm -rf package-query
 rm -rf yaourt
@@ -74,34 +73,34 @@ printf "Cloning and installing Yosemite San Francisco Font\n\n"
 git clone https://github.com/supermarin/YosemiteSanFranciscoFont
 
 cd YosemiteSanFranciscoFont/
-mv *.ttf ~/.fonts
+su $userName mv *.ttf ~/.fonts
 cd ..
 rm -rf YosemiteSanFranciscoFont
 
 printf "Installing rcs.\n\n"
 
-rm -rf ~/.bashrc
-mv .bashrc ~/.bashrc
+su $userName rm -rf ~/.bashrc
+su $userName mv .bashrc ~/.bashrc
 
-rm -rf ~/.bash_profile
-mv .bash_profile ~/.bash_profile
+su $userName rm -rf ~/.bash_profile
+su $userName mv .bash_profile ~/.bash_profile
 
-rm -rf ~/.Xresources
-mv .Xresources ~/.Xresources
+su $userName rm -rf ~/.Xresources
+su $userName mv .Xresources ~/.Xresources
 
-mkdir ~/.config/
-mkdir ~/.config/i3
-mv config ~/.config/i3
+su $userName mkdir ~/.config/
+su $userName mkdir ~/.config/i3
+su $userName mv config ~/.config/i3
 
-rm -rf ~/.i3blocks.conf
-mv .i3blocks.conf ~/.i3blocks.conf
+su $userName rm -rf ~/.i3blocks.conf
+su $userName mv .i3blocks.conf ~/.i3blocks.conf
 
-rm -rf ~/.gtkrc-2.0
-mv .gtkrc-2.0 ~/.gtkrc-2.0
+su $userName rm -rf ~/.gtkrc-2.0
+su $userName mv .gtkrc-2.0 ~/.gtkrc-2.0
 
-rm -rf ~/.config/gtk-3.0
-mkdir ~/.config/gtk-3.0
-mv settings.ini ~/.config/gtk-3.0
+su $userName rm -rf ~/.config/gtk-3.0
+su $userName mkdir ~/.config/gtk-3.0
+su $userName mv settings.ini ~/.config/gtk-3.0
 
-rm -rf ~/.config/compton.conf
-cp compton.conf ~/.config/compton.conf
+su $userName rm -rf ~/.config/compton.conf
+su $userName cp compton.conf ~/.config/compton.conf
