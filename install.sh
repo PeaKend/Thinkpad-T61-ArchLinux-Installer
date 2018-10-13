@@ -9,7 +9,7 @@ passwd
 printf "And lets add a user, with the name...\nuser: "
 read userName
 
-useradd -m -g wheel $userName
+useradd -m -G wheel $userName
 passwd $userName
 printf "\n$userName ALL=(ALL) ALL" >> /etc/sudoers
 
