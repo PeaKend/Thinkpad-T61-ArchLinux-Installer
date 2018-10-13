@@ -4,7 +4,7 @@ Tired of manually installing Arch Linux on your laptop?
 
 I Made a script for that!
 
-### This script does the following:
+### This script does the following
 
 #### pre-install.sh
 
@@ -49,7 +49,7 @@ I Made a script for that!
 * Makes the GRUB configuration file at /mnt/boot/grub/grub.cfg.
 * Configures GRUB to boot instantly.
 
-### The install script includes the following packages:
+### The install script includes the following packages
 
 * bash-completion
 * vim
@@ -77,3 +77,7 @@ I Made a script for that!
 * cmus
 * adobe-source-code-pro-fonts
 * noto-fonts-cjk
+
+### End result
+
+![neofetch of the system created by the script](https://i.imgur.com/wSPUFdf.png)
