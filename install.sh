@@ -50,6 +50,7 @@ printf "Downloading stuff\n\n"
 pacman --noconfirm bash-completion vim dialog wpa_supplicant intel-ucode grub i3 dmenu xorg xorg-xinit firefox vlc rxvt-unicode elinks xf86-video-intel thunderbird compton pulseaudio feh wget unzip nautilus htop cmus adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm
 
 systemctl enable sddm
+sed -i '/Current=/ s/$/breeze/' /usr/lib/sddm/sddm.conf.d/default.conf
 
 clear
 
