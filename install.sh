@@ -17,22 +17,22 @@ printf "Setting timezone (Argentina)\n\n"
 
 ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime
 
-printf "Running hwclock().\n\n"
+printf "Running hwclock()\n\n"
 
 hwclock --systohc
 
-printf "Configuring locale.gen.\n\n"
+printf "Configuring locale.gen\n\n"
 
 rm -rf /etc/locale.gen 
 cp locale.gen /etc/locale.gen
 locale-gen
 
-printf "Setting language to english.\n\n"
+printf "Setting language to english\n\n"
 
 rm -rf /etc/locale.conf
 cp locale.conf /etc/locale.conf
 
-printf "Making configurations.\n\n"
+printf "Making configurations\n\n"
 
 rm -rf /etc/pacman.conf
 cp pacman.conf /etc/pacman.conf
@@ -43,15 +43,15 @@ printf "\n127.0.0.1\tlocalhost\n::1\t\tlocalhost\n127.0.1.1\t$domainServer.local
 
 clear
 
-printf "Go and make yourself a coffe, this is going to take a while.\n\n"
+printf "Go and make yourself a coffe, this is going to take a while\n\n"
 
-printf "Downloading stuff.\n\n"
+printf "Downloading stuff\n\n"
 
 pacman -Syu --noconfirm bash-completion vim dialog wpa_supplicant intel-ucode grub i3 dmenu xorg xorg-xinit firefox vlc rxvt-unicode elinks xf86-video-intel thunderbird compton pulseaudio feh wget unzip nautilus htop cmus adobe-source-code-pro-fonts noto-fonts-cjk acpi
 
 clear
 
-printf "Installing yaourt.\n\n"
+printf "Installing yaourt\n\n"
 
 git clone https://aur.archlinux.org/package-query.git
 cd package-query
@@ -75,7 +75,7 @@ cp *.ttf /home/$userName/.fonts
 cd ..
 rm -rf YosemiteSanFranciscoFont
 
-printf "Installing rcs.\n\n"
+printf "Installing rcs\n\n"
 
 rm -rf /home/$userName/.Wallpapers
 mkdir /home/$userName/.Wallpapers
