@@ -84,9 +84,6 @@ rm -rf /home/$userName/.Wallpapers
 mkdir /home/$userName/.Wallpapers
 cp Wallpaper1.png /home/$userName/.Wallpapers
 
-rm -rf /home/$userName/.xinitrc
-cp .xinitrc /home/$userName/.xinitrc
-
 rm -rf /home/$userName/.bashrc
 cp .bashrc /home/$userName/.bashrc
 
