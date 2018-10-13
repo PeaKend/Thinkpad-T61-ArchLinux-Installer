@@ -39,8 +39,7 @@ cp pacman.conf /etc/pacman.conf
 rm -rf /etc/pacman.d/mirrorlist
 cp mirrorlist /etc/pacman.d/mirrorlist
 
-printf "$domainserver" > /etc/hostname
-printf "127.0.0.1\tlocalhost\n::1\tlocalhost\n127.0.1.1\t$domainserver.localdomain\t$domainserver" > /etc/hosts
+printf "\n127.0.0.1\tlocalhost\n::1\t\tlocalhost\n127.0.1.1\t$domainServer.localdomain\t$domainServer" >> /etc/hosts
 
 clear
 
