@@ -1,14 +1,14 @@
 #!/bin/bash
 
-echo "Looking for internet conection."
+echo "Looking for internet conection"
 
 while true; do
 	ping -c 1 archlinux.org 1>/dev/null
 	if [ $? -ne 0 ]; then
-		printf "Unable to access internet.\n"
-		printf "Use wifi-menu if you are on wireless.\n\n"
+		printf "Unable to access internet\n"
+		printf "Use wifi-menu if you are on wireless\n\n"
 	else 
-		printf "Conection detected.\n\n"
+		printf "Conection detected\n\n"
 		break
 	fi
 	sleep 2
@@ -18,25 +18,25 @@ printf "Setting timedate...\n"
 
 timedatectl set-ntp true
 
-printf "Done.\n\n"
+printf "Done\n\n"
 
-printf "Partitioning disks.\n\n"
+printf "Partitioning disks\n\n"
 
-printf "Deleting GPT and MBR.\n\n"
+printf "Deleting GPT and MBR\n\n"
 
 printf "x\nz\ny\ny\n" | gdisk /dev/sda 1>/dev/null
 
-printf "Making GPT.\n\n"
+printf "Making GPT\n\n"
 
 printf "n\n\n\n+1M\nef02\nn\n\n\n+8G\n8200\nn\n\n\n\n\nw\ny\n" | gdisk /dev/sda 1>/dev/null
 
-printf "Formating partitions.\n\n"
+printf "Formating partitions\n\n"
 
 mkswap /dev/sda2 1>/dev/null
 swapon /dev/sda2 1>/dev/null
 mkfs.ext4 /dev/sda3 1>/dev/null
 
-printf "Mounting file systems.\n\n"
+printf "Mounting file systems\n\n"
 
 mount /dev/sda3 /mnt 1>/dev/null
 
@@ -48,18 +48,18 @@ cp pacman.conf /etc/pacman.conf
 
 clear
 
-printf "Time to download the OS.\n\n"
+printf "Time to download the OS\n\n"
 
 pacstrap /mnt base base-devel
 
 clear
 
-printf "Generating the fstab file.\n\n"
+printf "Generating the fstab file\n\n"
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-printf "Entering your new system.\n"
+printf "Entering your new system\n"
 
-printf "Clone the repo again and run ./install.sh.\n\n"
+printf "Clone the repo again and run ./install.sh\n\n"
 
 arch-chroot /mnt
