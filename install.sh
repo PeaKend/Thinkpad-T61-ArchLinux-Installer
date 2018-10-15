@@ -88,7 +88,7 @@ cp rcs/xresources/.Xresources /home/$userName/.Xresources
 
 mkdir /home/$userName/.config/
 mkdir /home/$userName/.config/i3
-cp config /home/$userName/.config/i3
+cp rcs/i3/config /home/$userName/.config/i3
 
 rm -rf /home/$userName/.i3blocks.conf
 cp rcs/i3blocks/.i3blocks.conf /home/$userName/.i3blocks.conf
@@ -98,13 +98,13 @@ cp rcs/gtk-2.0/.gtkrc-2.0 /home/$userName/.gtkrc-2.0
 
 rm -rf /home/$userName/.config/gtk-3.0
 mkdir /home/$userName/.config/gtk-3.0
-cp configs/rcs/gtk-3.0/settings.ini /home/$userName/.config/gtk-3.0
+cp rcs/gtk-3.0/settings.ini /home/$userName/.config/gtk-3.0
 
 rm -rf /home/$userName/.config/compton.conf
 cp rcs/compton/compton.conf /home/$userName/.config/compton.conf
 
 rm -rf /home/$userName/.i3blocks.conf
-cp .i3blocks.conf /home/$userName/.i3blocks.conf
+cp rcs/i3blocks/.i3blocks.conf /home/$userName/.i3blocks.conf
 
 mkdir /home/$userName/.tmp
 
@@ -119,18 +119,3 @@ cp configs/grub/grub /etc/default/grub
 grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
-## Installs yaourt
-
-printf "Installing yaourt\n\n"
-
-su $userName
-git clone https://aur.archlinux.org/package-query.git
-cd package-query
-makepkg -si
-cd ..
-git clone https://aur.archlinux.org/yaourt.git
-cd yaourt
-makepkg -si
-cd ..
-rm -rf package-query
-rm -rf yaourt
