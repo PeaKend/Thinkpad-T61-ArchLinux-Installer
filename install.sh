@@ -73,7 +73,7 @@ cd ..
 rm -rf package-query
 rm -rf yaourt
 rm -rf /etc/yaourtrc
-cp yaourtrc /etc/yaourtrc
+cp configs/yaourt/yaourtrc /etc/yaourtrc
 
 ## Installs rcs
 
