@@ -1,3 +1,5 @@
+## Asks for information and writes it on their files
+
 printf "Domainserver name?\n\n"
 read domainServer
 
@@ -43,6 +45,8 @@ printf "\n127.0.0.1\tlocalhost\n::1\t\tlocalhost\n127.0.1.1\t$domainServer.local
 
 clear
 
+## Downloads programs
+
 printf "Go and make yourself a coffe, this is going to take a while\n\n"
 
 printf "Downloading stuff\n\n"
@@ -53,6 +57,8 @@ systemctl enable sddm
 sed -i '/Current=/ s/$/breeze/' /usr/lib/sddm/sddm.conf.d/default.conf
 
 clear
+
+## Installs yaourt
 
 printf "Installing yaourt\n\n"
 
@@ -68,6 +74,8 @@ rm -rf package-query
 rm -rf yaourt
 rm -rf /etc/yaourtrc
 cp yaourtrc /etc/yaourtrc
+
+## Installs rcs
 
 printf "Cloning and installing Yosemite San Francisco Font\n\n"
 
@@ -112,6 +120,8 @@ cp compton.conf /home/$userName/.config/compton.conf
 
 rm -rf /home/$userName/.i3blocks.conf
 cp .i3blocks.conf /home/$userName/.i3blocks.conf
+
+## Installs and configures GRUB
 
 printf "Installing GRUB\n\n"
 
