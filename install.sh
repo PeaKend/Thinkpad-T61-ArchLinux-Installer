@@ -92,7 +92,7 @@ rm -rf YosemiteSanFranciscoFont
 
 rm -rf /home/$userName/.Wallpapers
 mkdir /home/$userName/.Wallpapers
-cp Wallpaper1.png /home/$userName/.Wallpapers
+cp rcs/wallpaper/Wallpaper.png /home/$userName/.Wallpapers
 
 rm -rf /home/$userName/.bashrc
 cp .bashrc /home/$userName/.bashrc
