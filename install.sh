@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ## Asks for information and writes it on their files
 
 printf "Domainserver name?\n\n"
