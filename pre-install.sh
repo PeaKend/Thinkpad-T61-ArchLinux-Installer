@@ -1,5 +1,7 @@
 #!/bin/bash
 
+## looks for your internet connection
+
 echo "Looking for internet conection"
 
 while true; do
@@ -14,6 +16,8 @@ while true; do
 	sleep 2
 done
 
+## sets configurations
+
 printf "Setting timedate...\n"
 
 timedatectl set-ntp true
@@ -21,6 +25,8 @@ timedatectl set-ntp true
 printf "Done\n\n"
 
 printf "Partitioning disks\n\n"
+
+## prepares the GPT table and format the disks
 
 printf "Deleting GPT and MBR\n\n"
 
@@ -40,6 +46,8 @@ printf "Mounting file systems\n\n"
 
 mount /dev/sda3 /mnt 1>/dev/null
 
+## configures pacman and its mirrorlists
+
 printf "Configuring pacman mirrorlist\n\n"
 rm -rf /etc/pacman.d/mirrorlist
 cp mirrorlist /etc/pacman.d/mirrorlist
@@ -48,11 +56,15 @@ cp pacman.conf /etc/pacman.conf
 
 clear
 
+## download the system
+
 printf "Time to download the OS\n\n"
 
 pacstrap /mnt base base-devel
 
 clear
+
+## creates the fstab
 
 printf "Generating the fstab file\n\n"
 
