@@ -78,13 +78,13 @@ mkdir /home/$userName/.Wallpapers
 cp rcs/wallpaper/Wallpaper.png /home/$userName/.Wallpapers
 
 rm -rf /home/$userName/.bashrc
-cp .bashrc /home/$userName/.bashrc
+cp rcs/bashrc/.bashrc /home/$userName/.bashrc
 
 rm -rf /home/$userName/.bash_profile
-cp .bash_profile /home/$userName/.bash_profile
+cp configs/bash_profile/.bash_profile /home/$userName/.bash_profile
 
 rm -rf /home/$userName/.Xresources
-cp .Xresources /home/$userName/.Xresources
+cp rcs/xresources/.Xresources /home/$userName/.Xresources
 
 mkdir /home/$userName/.config/
 mkdir /home/$userName/.config/i3
