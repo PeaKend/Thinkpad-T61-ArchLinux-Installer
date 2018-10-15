@@ -51,7 +51,7 @@ printf "Go and make yourself a coffe, this is going to take a while\n\n"
 
 printf "Downloading stuff\n\n"
 
-pacman -S --noconfirm bash-completion vim dialog wpa_supplicant intel-ucode grub i3 dmenu xorg xorg-xinit firefox vlc rxvt-unicode elinks xf86-video-intel thunderbird compton pulseaudio feh wget unzip nautilus htop cmus adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm breeze alsa alsa-utils
+pacman -S --noconfirm vim dialog wpa_supplicant intel-ucode grub i3 dmenu xorg xorg-xinit firefox vlc rxvt-unicode elinks xf86-video-intel thunderbird compton pulseaudio feh wget unzip nautilus htop cmus adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm breeze alsa alsa-utils
 
 systemctl enable sddm
 
@@ -80,6 +80,15 @@ cp configs/yaourt/yaourtrc /etc/yaourtrc
 ## Installs rcs
 
 printf "Installing rcs\n\n"
+
+printf "Cloning and installing Yosemite San Francisco Font\n\n"
+
+git clone https://github.com/supermarin/YosemiteSanFranciscoFont
+cd YosemiteSanFranciscoFont/
+mkdir /home/$userName/.fonts
+cp *.ttf /home/$userName/.fonts
+cd ..
+rm -rf YosemiteSanFranciscoFont
 
 rm -rf /home/$userName/.Wallpapers
 mkdir /home/$userName/.Wallpapers
