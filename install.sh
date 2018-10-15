@@ -26,13 +26,13 @@ hwclock --systohc
 printf "Configuring locale.gen\n\n"
 
 rm -rf /etc/locale.gen 
-cp locale.gen /etc/locale.gen
+cp /configs/locale/locale.gen /etc/locale.gen
 locale-gen
 
 printf "Setting language to english\n\n"
 
 rm -rf /etc/locale.conf
-cp locale.conf /etc/locale.conf
+cp /configs/locale/locale.conf /etc/locale.conf
 
 printf "Making configurations\n\n"
 
