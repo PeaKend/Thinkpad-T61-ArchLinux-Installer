@@ -77,15 +77,6 @@ cp yaourtrc /etc/yaourtrc
 
 ## Installs rcs
 
-printf "Cloning and installing Yosemite San Francisco Font\n\n"
-
-git clone https://github.com/supermarin/YosemiteSanFranciscoFont
-cd YosemiteSanFranciscoFont/
-mkdir /home/$userName/.fonts
-cp *.ttf /home/$userName/.fonts
-cd ..
-rm -rf YosemiteSanFranciscoFont
-
 printf "Installing rcs\n\n"
 
 rm -rf /home/$userName/.Wallpapers
