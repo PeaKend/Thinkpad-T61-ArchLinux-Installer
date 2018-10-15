@@ -37,9 +37,9 @@ cp configs/locale/locale.conf /etc/locale.conf
 printf "Making configurations\n\n"
 
 rm -rf /etc/pacman.conf
-cp pacman.conf /etc/pacman.conf
+cp configs/pacman/pacman.conf /etc/pacman.conf
 rm -rf /etc/pacman.d/mirrorlist
-cp mirrorlist /etc/pacman.d/mirrorlist
+cp configs/pacman/mirrorlist /etc/pacman.d/mirrorlist
 
 printf "\n127.0.0.1\tlocalhost\n::1\t\tlocalhost\n127.0.1.1\t$domainServer.localdomain\t$domainServer" >> /etc/hosts
 
