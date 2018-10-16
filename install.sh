@@ -121,6 +121,8 @@ cp configs/grub/grub /etc/default/grub
 grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
-printf "the system installation is done, now you can install yaourt or reboot your system"
+printf "the system installation is done, now you can install yaourt or reboot your system\n"
+
+cd /home/$userName/
 
 su $userName
