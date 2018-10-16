@@ -57,9 +57,6 @@ pacman -S --noconfirm vim dialog wpa_supplicant intel-ucode grub i3 dmenu xorg x
 
 systemctl enable sddm
 
-rm -rf /usr/lib/sddm/sddm.conf.d/default.conf
-cp configs/sddm/default.conf /usr/lib/sddm/sddm.conf.d/default.conf
-
 clear
 
 ## Installs rcs
