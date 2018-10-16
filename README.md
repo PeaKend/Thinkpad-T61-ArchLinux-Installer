@@ -39,8 +39,6 @@ I Made a script for that!
 * Configures your hosts file.
 * Creates a new initramfs (just in case).
 * Downloads packages.
-* Installs yaourt.
-* Configures yaourt to ignore confirmations.
 * Clones https://github.com/supermarin/YosemiteSanFranciscoFont font.
 * Installs the new font.
 * Installs my rc files.
@@ -49,9 +47,13 @@ I Made a script for that!
 * Makes the GRUB configuration file at /mnt/boot/grub/grub.cfg.
 * Configures GRUB to boot instantly.
 
+#### installYaourt.sh
+
+* Installs yaourt.
+* Configures yaourt to ignore confirmations.
+
 ### The install script includes the following packages
 
-* bash-completion
 * vim
 * dialog
 * wpa_supplicant
@@ -77,6 +79,11 @@ I Made a script for that!
 * cmus
 * adobe-source-code-pro-fonts
 * noto-fonts-cjk
+* acpi
+* libreoffice
+* sddm
+* alsa
+* alsa-utils
 
 ### End result
 
