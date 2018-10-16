@@ -192,7 +192,7 @@ bar {
 }
 
 exec compton &
-exec feh --bg-scale ~/.Wallpapers/Wallpaper1.png
+exec feh --bg-scale ~/.Wallpapers/Wallpaper.png
 
 new_window pixel1
 hide_edge_borders both
