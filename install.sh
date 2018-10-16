@@ -123,6 +123,4 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 printf "the system installation is done, now you can install yaourt or reboot your system\n"
 
-cd /home/$userName/
-
 su $userName
