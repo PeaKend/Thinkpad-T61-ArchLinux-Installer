@@ -215,8 +215,6 @@ cp *.ttf /home/$userName/.fonts
 cd ..
 rm -rf YosemiteSanFranciscoFont
 
-cp configs/yaourt/yaourtrc /etc/yaourtrc
-
 rm -rf /home/$userName/.Wallpapers
 mkdir /home/$userName/.Wallpapers
 cp rcs/wallpaper/Wallpaper.png /home/$userName/.Wallpapers

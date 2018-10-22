@@ -19,3 +19,4 @@ makepkg -si
 cd ..
 rm -rf package-query
 rm -rf yaourt
+sudo rm -rf /etc/yaourtrc && sudo cp configs/yaourt/yaourtrc /etc/yaourtrc
