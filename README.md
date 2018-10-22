@@ -90,6 +90,7 @@ I Made a script for that!
 
 * i3
 * dmenu
+* rxvt-unicode
 * sddm
 * wpa_supplicant
 * dialog

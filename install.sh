@@ -20,10 +20,18 @@ printf "\n$userName ALL=(ALL) ALL" >> /etc/sudoers
 while true; do
 	printf "Choose your DE/WM\n\n"
 
+	printf "[0] none\n"
 	printf "[1] i3\n"
 	printf "[2] KDE Plasma\n"
-	printf "[3] Gnome\n\n"
+	printf "[3] KDE Plasma (without kde-applications)\n"
+	printf "[4] KDE Plasma Minimal\n"
+	printf "[5] Gnome\n"
+	printf "[6] Gnome (without gnome-extra)\n\n"
 	read deChoice
+
+	if [ "$deChoice" -eq "0" ]; then
+		break
+	fi
 
 	if [ "$deChoice" -eq "1" ]; then
 		break
@@ -34,6 +42,18 @@ while true; do
 	fi
 
 	if [ "$deChoice" -eq "3" ]; then
+			break
+	fi
+
+	if [ "$deChoice" -eq "4" ]; then
+			break
+	fi
+
+	if [ "$deChoice" -eq "5" ]; then
+			break
+	fi
+
+	if [ "$deChoice" -eq "6" ]; then
 			break
 	fi
 
@@ -80,6 +100,18 @@ printf "Go and make yourself a coffe, this is going to take a while\n\n"
 
 printf "Downloading stuff\n\n"
 
+## doesn't install a DE/WM
+
+if [ $deChoice -eq 0 ]; then
+
+pacman -S --noconfirm bash-completion vim dialog wpa_supplicant intel-ucode grub wget unzip htop acpi alsa alsa-utils
+
+systemctl enable sddm
+
+clear
+
+fi
+
 ## installs i3
 
 if [ $deChoice -eq 1 ]; then
@@ -96,7 +128,7 @@ fi
 
 if [ $deChoice -eq 2 ]; then
 
-pacman -S --noconfirm bash-completion vim intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils plasma kde-applications
+pacman -S --noconfirm bash-completion vim wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils plasma kde-applications
 
 systemctl enable sddm
 systemctl disable dhcpcd
@@ -109,11 +141,60 @@ clear
 
 fi
 
-## installs gnome
+## installs kde plasma (without kde-applications)
 
 if [ $deChoice -eq 3 ]; then
 
-pacman -S --noconfirm bash-completion vim intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils gnome gnome-extra gdm 
+pacman -S --noconfirm bash-completion vim wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils plasma 
+
+systemctl enable sddm
+systemctl disable dhcpcd
+systemctl enable NetworkManager
+
+rm -rf /usr/lib/sddm/sddm.conf.d/default.conf
+cp configs/sddm/default.conf /usr/lib/sddm/sddm.conf.d/default.conf
+
+clear
+
+fi
+
+## installs kde plasma minimal
+
+if [ $deChoice -eq 4 ]; then
+
+pacman -S --noconfirm bash-completion vim wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils plasma-desktop 
+
+systemctl enable sddm
+systemctl disable dhcpcd
+systemctl enable NetworkManager
+
+rm -rf /usr/lib/sddm/sddm.conf.d/default.conf
+cp configs/sddm/default.conf /usr/lib/sddm/sddm.conf.d/default.conf
+
+clear
+
+fi
+
+
+## installs gnome
+
+if [ $deChoice -eq 5 ]; then
+
+pacman -S --noconfirm bash-completion vim wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils gnome gnome-extra gdm 
+
+systemctl enable gdm
+systemctl disable dhcpcd
+systemctl enable NetworkManager
+
+clear
+
+fi
+
+## installs gnome without gnome-extra
+
+if [ $deChoice -eq 6 ]; then
+
+pacman -S --noconfirm bash-completion vim wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils gnome gdm 
 
 systemctl enable gdm
 systemctl disable dhcpcd
