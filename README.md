@@ -84,6 +84,16 @@ I Made a script for that!
 * alsa
 * alsa-utils
 
+### You can install the following DMs/WMs:
+
+* Nothing
+* i3
+* KDE Plasma
+* KDE Plasma (without kde-applications)
+* KDE Plasma Minimal
+* Gnome
+* Gnome (without gnome-extra)
+
 ### Extra packages for DE/WM:
 
 #### i3
