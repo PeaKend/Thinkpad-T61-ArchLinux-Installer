@@ -17,6 +17,18 @@ useradd -m -G wheel $userName
 passwd $userName
 printf "\n$userName ALL=(ALL) ALL" >> /etc/sudoers
 
+
+choice=0
+while [ $deChoice -lt 1 ] || [ $deChoice -gt 3 ]; do
+	printf "Choose your DE/WM\n\n"
+
+	printf "[1] i3\n"
+	printf "[2] KDE Plasma\n"
+	printf "[3] Gnome\n"
+	read deChoice
+done
+	
+
 printf "Setting timezone (Argentina)\n\n"
 
 ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime
@@ -53,11 +65,45 @@ printf "Go and make yourself a coffe, this is going to take a while\n\n"
 
 printf "Downloading stuff\n\n"
 
-pacman -S --noconfirm vim dialog wpa_supplicant intel-ucode grub i3 dmenu xorg xorg-xinit firefox vlc rxvt-unicode elinks xf86-video-intel thunderbird compton pulseaudio feh wget unzip nautilus htop cmus adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils
+## installs i3
+
+if [ $deChoice -eq 1 ]; then
+
+pacman -S --noconfirm bash-completion vim dialog wpa_supplicant intel-ucode grub i3 dmenu xorg xorg-xinit firefox vlc rxvt-unicode elinks xf86-video-intel thunderbird compton pulseaudio feh wget unzip nautilus htop cmus adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils
 
 systemctl enable sddm
 
 clear
+
+fi
+
+## installs kde plasma
+
+if [ $deChoice -eq 2 ]; then
+
+pacman -S --noconfirm bash-completion vim dialog wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc elinks xf86-video-intel thunderbird pulseaudio feh wget unzip htop cmus adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils plasma kde-applications
+
+systemctl enable sddm
+systemctl disable dhcpcd
+systemctl enable NetworkManager
+
+clear
+
+fi
+
+## installs gnome
+
+if [ $deChoice -eq 3 ]; then
+
+pacman -S --noconfirm bash-completion vim dialog wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc elinks xf86-video-intel thunderbird pulseaudio feh wget unzip htop cmus adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils gnome gnome-extra gdm 
+
+systemctl enable gdm
+systemctl disable dhcpcd
+systemctl enable NetworkManager
+
+clear
+
+fi
 
 ## Installs rcs
 
