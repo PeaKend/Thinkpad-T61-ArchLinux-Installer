@@ -30,6 +30,7 @@ I Made a script for that!
 * Asks and creates a new user.
 * Asks for the new user password.
 * Adds the new user to sudoers.
+* Asks for a DE or WM to install.
 * Links the localtime to America/Argentina/Buenos_Aires.
 * Sets hardware clock.
 * Generates a locale-gen of en_US.utf-8.
@@ -49,14 +50,14 @@ I Made a script for that!
 
 #### installYaourt.sh
 
+* Installs package-query (requeriment for yaourt).
 * Installs yaourt.
 * Configures yaourt to ignore confirmations.
 
 ### The install script includes the following packages
 
+* bash-completion
 * vim
-* dialog
-* wpa_supplicant
 * intel-ucode
 * grub
 * i3
@@ -76,15 +77,37 @@ I Made a script for that!
 * unzip
 * nautilus
 * htop
-* cmus
 * adobe-source-code-pro-fonts
 * noto-fonts-cjk
 * acpi
 * libreoffice
-* sddm
 * alsa
 * alsa-utils
 
-### End result
+### Extra packages for DE/WM:
+
+#### i3
+
+* i3
+* dmenu
+* sddm
+* wpa_supplicant
+* dialog
+* feh
+* nautilus
+
+#### KDE Plasma
+
+* plasma
+* kde-applications
+* sddm
+
+#### Gnome
+
+* gnome
+* gnome-extra
+* gdm
+
+### End result (i3)
 
 ![neofetch of the system created by the script](https://i.imgur.com/wSPUFdf.png)

@@ -84,7 +84,7 @@ printf "Downloading stuff\n\n"
 
 if [ $deChoice -eq 1 ]; then
 
-pacman -S --noconfirm bash-completion vim dialog wpa_supplicant intel-ucode grub i3 dmenu xorg xorg-xinit firefox vlc rxvt-unicode xf86-video-intel thunderbird compton pulseaudio feh wget unzip nautilus htop cmus adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils
+pacman -S --noconfirm bash-completion vim dialog wpa_supplicant intel-ucode grub i3 dmenu xorg xorg-xinit firefox vlc rxvt-unicode xf86-video-intel thunderbird compton pulseaudio feh wget unzip nautilus htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils
 
 systemctl enable sddm
 
@@ -96,15 +96,14 @@ fi
 
 if [ $deChoice -eq 2 ]; then
 
-pacman -S --noconfirm bash-completion vim dialog wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio feh wget unzip htop cmus adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils plasma kde-applications
+pacman -S --noconfirm bash-completion vim intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils plasma kde-applications
 
 systemctl enable sddm
+systemctl disable dhcpcd
+systemctl enable NetworkManager
 
 rm -rf /usr/lib/sddm/sddm.conf.d/default.conf
 cp configs/sddm/default.conf /usr/lib/sddm/sddm.conf.d/default.conf
-
-systemctl disable dhcpcd
-systemctl enable NetworkManager
 
 clear
 
@@ -114,7 +113,7 @@ fi
 
 if [ $deChoice -eq 3 ]; then
 
-pacman -S --noconfirm bash-completion vim dialog wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio feh wget unzip htop cmus adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils gnome gnome-extra gdm 
+pacman -S --noconfirm bash-completion vim intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils gnome gnome-extra gdm 
 
 systemctl enable gdm
 systemctl disable dhcpcd
