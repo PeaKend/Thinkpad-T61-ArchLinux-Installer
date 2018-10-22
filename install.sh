@@ -17,18 +17,6 @@ useradd -m -G wheel $userName
 passwd $userName
 printf "\n$userName ALL=(ALL) ALL" >> /etc/sudoers
 
-
-choice=0
-
-#while [ $deChoice -lt 1 ] || [ $deChoice -gt 3 ]; do
-#	printf "Choose your DE/WM\n\n"
-
-#	printf "[1] i3\n"
-#	printf "[2] KDE Plasma\n"
-#	printf "[3] Gnome\n"
-#	read deChoice
-#done
-	
 while true; do
 	printf "Choose your DE/WM\n\n"
 
