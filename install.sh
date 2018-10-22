@@ -38,7 +38,7 @@ while true; do
 	fi
 
 	clear
-	printf "Wrong choice"
+	printf "Wrong number\n\n"
 
 done
 
