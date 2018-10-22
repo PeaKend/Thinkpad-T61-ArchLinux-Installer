@@ -99,6 +99,10 @@ if [ $deChoice -eq 2 ]; then
 pacman -S --noconfirm bash-completion vim dialog wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio feh wget unzip htop cmus adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils plasma kde-applications
 
 systemctl enable sddm
+
+rm -rf /usr/lib/sddm/sddm.conf.d/default.conf
+cp configs/sddm/default.conf /usr/lib/sddm/sddm.conf.d/default.conf
+
 systemctl disable dhcpcd
 systemctl enable NetworkManager
 
