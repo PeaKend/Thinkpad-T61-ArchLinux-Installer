@@ -20,4 +20,10 @@ cd ..
 rm -rf package-query
 rm -rf yaourt
 sudo rm -rf /etc/yaourtrc 
+git clone https://github.com/peakend/thinkpad-t61-archlinux-installer
+cd thinkpad-t61-archlinux-installer/
 sudo cp configs/yaourt/yaourtrc /etc/yaourtrc
+rm -rf thinkpad-t61-archlinux-installer/
+cd ~
+clear
+printf "Everything done\n\n\n\n"
