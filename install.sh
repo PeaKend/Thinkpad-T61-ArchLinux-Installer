@@ -22,7 +22,7 @@ while true; do
 
 	printf "[1] i3\n"
 	printf "[2] KDE Plasma\n"
-	printf "[3] Gnome\n"
+	printf "[3] Gnome\n\n"
 	read deChoice
 
 	if [ "$deChoice" -eq "1" ]; then
