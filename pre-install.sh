@@ -22,19 +22,33 @@ printf "Setting timedate...\n"
 
 timedatectl set-ntp true
 
-printf "Done\n\n"
+clear
+
+## user tells the disk to use and the sizes of the partitions
+
+printf "What disk are you going to install the OS on? (eg: /dev/sda)\n\n"
+
+read userDisk 
 
 printf "Partitioning disks\n\n"
 
+clear
+
+printf "Amount of swap you want (eg: 8G): "
+
+read userdiskSwap
+
+clear
+
 ## prepares the GPT table and format the disks
 
-printf "Deleting GPT and MBR\n\n"
+printf "Deleting current table\n\n"
 
 printf "x\nz\ny\ny\n" | gdisk /dev/sda 1>/dev/null
 
 printf "Making GPT\n\n"
 
-printf "n\n\n\n+1M\nef02\nn\n\n\n+8G\n8200\nn\n\n\n\n\nw\ny\n" | gdisk /dev/sda 1>/dev/null
+printf "n\n\n\n+1M\nef02\nn\n\n\n+$userdiskSwap\n8200\nn\n\n\n\n\nw\ny\n" | gdisk /dev/sda 1>/dev/null
 
 printf "Formating partitions\n\n"
 
