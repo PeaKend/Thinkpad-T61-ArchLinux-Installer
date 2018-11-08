@@ -125,7 +125,7 @@ sleep 5
 
 if [ $deChoice -eq 0 ]; then
 
-pacman -S --noconfirm bash-completion vim dialog wpa_supplicant intel-ucode grub wget unzip htop acpi alsa alsa-utils
+pacman -S --noconfirm bash-completion vim dialog wpa_supplicant intel-ucode grub wget unzip htop acpi alsa alsa-utils iw
 
 systemctl enable sddm
 
