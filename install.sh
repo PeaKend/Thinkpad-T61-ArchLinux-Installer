@@ -2,6 +2,8 @@
 
 ## Asks for information and writes it on their files
 
+repoName = "thinkpad-t61-archlinux-installer"
+
 printf "Domainserver name: "
 read domainServer
 
@@ -271,6 +273,9 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 clear
 
-printf "The system installation is done, you can run installYaourt.sh or reboot your system now\n"
+## deletes the repository
+rm -rf /$repoName/
+
+printf "The system installation is done, you can run yaourt.sh to install yaourt or reboot your system now\n\n"
 
 su $userName
