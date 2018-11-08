@@ -5,7 +5,7 @@ if [[ $EUID -eq 0 ]]; then
 	exit 1
 fi
 
-repoName = "thinkpad-t61-archlinux-installer"
+repoName="thinkpad-t61-archlinux-installer"
 
 cd ~/
 
