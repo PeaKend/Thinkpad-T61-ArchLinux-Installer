@@ -90,7 +90,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 
 clear
 
-printf "Entering your new system\n"
-printf "Clone the repo again and run ./install.sh\n"
+printf "Entering your new system\n\n"
+printf "Clone the repo again and run ./install.sh\n\n"
 
 arch-chroot /mnt
