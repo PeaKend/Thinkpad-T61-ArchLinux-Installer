@@ -258,6 +258,8 @@ cp rcs/gtk-3.0/settings.ini /home/$userName/.config/gtk-3.0
 
 chown -hR $userName /home/$userName/
 
+clear
+
 ## Installs and configures GRUB
 
 printf "Installing GRUB\n\n"
