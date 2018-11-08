@@ -88,8 +88,9 @@ printf "Generating the fstab file\n\n"
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-printf "Entering your new system\n"
+clear
 
-printf "Clone the repo again and run ./install.sh\n\n"
+printf "Entering your new system\n"
+printf "Clone the repo again and run ./install.sh\n"
 
 arch-chroot /mnt
