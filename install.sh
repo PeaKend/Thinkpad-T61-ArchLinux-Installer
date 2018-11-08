@@ -284,7 +284,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 clear
 
-## deletes the repository
+## moves the repository
 
 mv -R /$repoName/ /home/$userName/$repoName
 cd /home/$userName/$repoName
