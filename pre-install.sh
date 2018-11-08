@@ -16,15 +16,9 @@ while true; do
 	sleep 2
 done
 
-## sets configurations
-
-printf "Setting timedate...\n"
-
-timedatectl set-ntp true
+## reads user value for the amount of space on partitions
 
 clear
-
-## reads user value for the amount of space on partitions
 
 printf "In what disk do you want to install Arch Linux on? (eg: /dev/sda): "
 
@@ -42,23 +36,45 @@ clear
 
 printf "Partitioning disks\n\n"
 
+clear
+
 printf "Deleting GPT and MBR\n\n"
+
+clear
 
 printf "x\nz\ny\ny\n" | gdisk $userDisk 1>/dev/null
 
+clear
+
 printf "Making GPT\n\n"
 
+clear
+
 printf "n\n\n\n+1M\nef02\nn\n\n\n+$userSwap\n8200\nn\n\n\n\n\nw\ny\n" | gdisk /dev/sda 1>/dev/null
+
+clear
 
 printf "Formating partitions\n\n"
 
 mkswap /dev/sda2 1>/dev/null
 mkfs.ext4 /dev/sda3 1>/dev/null
 
+clear
+
 printf "Mounting file systems\n\n"
 
 swapon /dev/sda2 1>/dev/null
 mount /dev/sda3 /mnt 1>/dev/null
+
+clear
+
+## sets configurations
+
+printf "Setting timedate...\n"
+
+timedatectl set-ntp true
+
+clear
 
 ## configures pacman and its mirrorlists
 
