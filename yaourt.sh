@@ -29,9 +29,6 @@ rm -rf package-query
 rm -rf yaourt
 sudo rm -rf /etc/yaourtrc 
 
-cd ~
-git clone https://github.com/peakend/thinkpad-t61-archlinux-installer
-cd thinkpad-t61-archlinux-installer/
 sudo cp configs/yaourt/yaourtrc /etc/yaourtrc
 cd ~ 
 rm -rf $repoName/
