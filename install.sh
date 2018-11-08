@@ -274,6 +274,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 clear
 
 ## deletes the repository
+
 rm -rf /$repoName/
 
 printf "The system installation is done, you can run yaourt.sh to install yaourt or reboot your system now\n\n"
