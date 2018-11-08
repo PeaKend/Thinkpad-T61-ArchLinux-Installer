@@ -31,7 +31,7 @@ sudo rm -rf /etc/yaourtrc
 
 sudo cp configs/yaourt/yaourtrc /etc/yaourtrc
 cd ~ 
-rm -rf $repoName/
+sudo rm -rf $repoName/
 
 mkdir /home/$userName/.tmp
 clear
