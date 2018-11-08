@@ -19,9 +19,6 @@ clear
 
 printf "New user name: "
 read userName
-
-clear
-
 useradd -m -G wheel $userName
 passwd $userName
 printf "\n$userName ALL=(ALL) ALL" >> /etc/sudoers
@@ -38,6 +35,8 @@ while true; do
 	printf "[4] KDE Plasma Minimal\n"
 	printf "[5] Gnome\n"
 	printf "[6] Gnome (without gnome-extra)\n\n"
+
+    printf "Your choice: "
 	read deChoice
 
 	if [ "$deChoice" -eq "0" ]; then
