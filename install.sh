@@ -28,7 +28,7 @@ clear
 while true; do
 	printf "Choose your DE/WM\n\n"
 
-	printf "[0] none\n"
+	printf "[0] No DE/WM\n"
 	printf "[1] i3\n"
 	printf "[2] KDE Plasma\n"
 	printf "[3] KDE Plasma (without kde-applications)\n"
