@@ -34,7 +34,7 @@ clear
 
 ## prepares the GPT table and format the disks
 
-printf "Deleting GPT and MBR\n\n"
+printf "Deleting current GPT and MBR tables from disk\n\n"
 
 printf "x\nz\ny\ny\n" | gdisk $userDisk 1>/dev/null
 
