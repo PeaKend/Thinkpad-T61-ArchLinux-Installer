@@ -2,7 +2,7 @@
 
 ## Asks for information and writes it on their files
 
-repoName = "thinkpad-t61-archlinux-installer"
+repoName="thinkpad-t61-archlinux-installer"
 
 printf "Domainserver name: "
 read domainServer
