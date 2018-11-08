@@ -22,19 +22,33 @@ printf "Setting timedate...\n"
 
 timedatectl set-ntp true
 
-printf "Done\n\n"
+clear
 
-printf "Partitioning disks\n\n"
+## reads user value for the amount of space on partitions
+
+printf "In what disk do you want to install Arch Linux on? (eg: /dev/sda): "
+
+read userDisk
+
+clear
+
+printf "Size of swap partition? (eg: 8G): " 
+
+read userSwap
+
+clear
 
 ## prepares the GPT table and format the disks
 
+printf "Partitioning disks\n\n"
+
 printf "Deleting GPT and MBR\n\n"
 
-printf "x\nz\ny\ny\n" | gdisk /dev/sda 1>/dev/null
+printf "x\nz\ny\ny\n" | gdisk $userDisk 1>/dev/null
 
 printf "Making GPT\n\n"
 
-printf "n\n\n\n+1M\nef02\nn\n\n\n+8G\n8200\nn\n\n\n\n\nw\ny\n" | gdisk /dev/sda 1>/dev/null
+printf "n\n\n\n+1M\nef02\nn\n\n\n+$userSwap\n8200\nn\n\n\n\n\nw\ny\n" | gdisk /dev/sda 1>/dev/null
 
 printf "Formating partitions\n\n"
 
