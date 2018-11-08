@@ -2,20 +2,30 @@
 
 ## Asks for information and writes it on their files
 
-printf "Domainserver name?\n\n"
+printf "Domainserver name: "
 read domainServer
 
-printf "Now lets create a password for root\n\n"
+clear
 
-printf "Password for root:\n"
+printf "Now lets create a password for root\n"
+
 passwd
 
-printf "And lets add a user, with the name...\nuser: "
+clear
+
+printf "Lets add a user, with the name: "
 read userName
 
+clear
+
 useradd -m -G wheel $userName
+
+printf "Lets create a password for the user\n"
+
 passwd $userName
 printf "\n$userName ALL=(ALL) ALL" >> /etc/sudoers
+
+clear
 
 while true; do
 	printf "Choose your DE/WM\n\n"
@@ -58,7 +68,7 @@ while true; do
 	fi
 
 	clear
-	printf "Wrong number\n\n"
+	printf "ERROR: choose a number in the list below\n\n"
 
 done
 
@@ -90,6 +100,8 @@ cp configs/pacman/pacman.conf /etc/pacman.conf
 rm -rf /etc/pacman.d/mirrorlist
 cp configs/pacman/mirrorlist /etc/pacman.d/mirrorlist
 
+printf "$domainServer > /etc/hostname"
+
 printf "\n127.0.0.1\tlocalhost\n::1\t\tlocalhost\n127.0.1.1\t$domainServer.localdomain\t$domainServer" >> /etc/hosts
 
 clear
@@ -98,7 +110,7 @@ clear
 
 printf "Go and make yourself a coffe, this is going to take a while\n\n"
 
-printf "Downloading stuff\n\n"
+sleep(5)
 
 ## doesn't install a DE/WM
 
@@ -261,6 +273,8 @@ cp configs/grub/grub /etc/default/grub
 grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
-printf "the system installation is done, you can run installYaourt.sh or reboot your system now\n"
+clear
+
+printf "The system installation is done, you can run installYaourt.sh or reboot your system now\n"
 
 su $userName
