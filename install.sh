@@ -17,15 +17,12 @@ passwd
 
 clear
 
-printf "Lets add a user, with the name: "
+printf "New user name: "
 read userName
 
 clear
 
 useradd -m -G wheel $userName
-
-printf "Lets create a password for the user\n"
-
 passwd $userName
 printf "\n$userName ALL=(ALL) ALL" >> /etc/sudoers
 
