@@ -275,6 +275,11 @@ printf "Installing GRUB\n\n"
 rm -rf /etc/default/grub
 cp configs/grub/grub /etc/default/grub
 grub-install --target=i386-pc /dev/sda
+
+clear
+
+printf "Making GRUB config file\n\n"
+
 grub-mkconfig -o /boot/grub/grub.cfg
 
 clear
