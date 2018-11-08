@@ -286,7 +286,7 @@ clear
 
 ## moves the repository
 
-mv -R /$repoName/ /home/$userName/$repoName
+mv /$repoName/ /home/$userName/$repoName
 cd /home/$userName/$repoName
 
 printf "The system installation is done, you can run yaourt.sh to install yaourt or reboot your system now\n\n"
