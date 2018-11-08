@@ -25,5 +25,6 @@ cd thinkpad-t61-archlinux-installer/
 sudo cp configs/yaourt/yaourtrc /etc/yaourtrc
 rm -rf thinkpad-t61-archlinux-installer/
 cd ~
+mkdir /home/$userName/.tmp
 clear
 printf "Everything done\n\n\n\n"

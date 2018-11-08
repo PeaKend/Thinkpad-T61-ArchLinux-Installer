@@ -132,6 +132,23 @@ pacman -S --noconfirm bash-completion vim dialog wpa_supplicant intel-ucode grub
 
 systemctl enable sddm
 
+rm -rf /home/$userName/.Wallpapers
+mkdir /home/$userName/.Wallpapers
+cp rcs/wallpaper/Wallpaper.png /home/$userName/.Wallpapers
+
+rm -rf /home/$userName/.Xresources
+cp rcs/xresources/.Xresources /home/$userName/.Xresources
+
+mkdir /home/$userName/.config/
+mkdir /home/$userName/.config/i3
+cp rcs/i3/config /home/$userName/.config/i3
+
+rm -rf /home/$userName/.config/compton.conf
+cp rcs/compton/compton.conf /home/$userName/.config/compton.conf
+
+rm -rf /home/$userName/.i3blocks.conf
+cp rcs/i3blocks/.i3blocks.conf /home/$userName/.i3blocks.conf
+
 clear
 
 fi
@@ -187,7 +204,6 @@ clear
 
 fi
 
-
 ## installs gnome
 
 if [ $deChoice -eq 5 ]; then
@@ -227,25 +243,11 @@ cp *.ttf /home/$userName/.fonts
 cd ..
 rm -rf YosemiteSanFranciscoFont
 
-rm -rf /home/$userName/.Wallpapers
-mkdir /home/$userName/.Wallpapers
-cp rcs/wallpaper/Wallpaper.png /home/$userName/.Wallpapers
-
 rm -rf /home/$userName/.bashrc
 cp rcs/bashrc/.bashrc /home/$userName/.bashrc
 
 rm -rf /home/$userName/.bash_profile
 cp configs/bash_profile/.bash_profile /home/$userName/.bash_profile
-
-rm -rf /home/$userName/.Xresources
-cp rcs/xresources/.Xresources /home/$userName/.Xresources
-
-mkdir /home/$userName/.config/
-mkdir /home/$userName/.config/i3
-cp rcs/i3/config /home/$userName/.config/i3
-
-rm -rf /home/$userName/.i3blocks.conf
-cp rcs/i3blocks/.i3blocks.conf /home/$userName/.i3blocks.conf
 
 rm -rf /home/$userName/.gtkrc-2.0
 cp rcs/gtk-2.0/.gtkrc-2.0 /home/$userName/.gtkrc-2.0
@@ -253,14 +255,6 @@ cp rcs/gtk-2.0/.gtkrc-2.0 /home/$userName/.gtkrc-2.0
 rm -rf /home/$userName/.config/gtk-3.0
 mkdir /home/$userName/.config/gtk-3.0
 cp rcs/gtk-3.0/settings.ini /home/$userName/.config/gtk-3.0
-
-rm -rf /home/$userName/.config/compton.conf
-cp rcs/compton/compton.conf /home/$userName/.config/compton.conf
-
-rm -rf /home/$userName/.i3blocks.conf
-cp rcs/i3blocks/.i3blocks.conf /home/$userName/.i3blocks.conf
-
-mkdir /home/$userName/.tmp
 
 chown -hR $userName /home/$userName/
 
