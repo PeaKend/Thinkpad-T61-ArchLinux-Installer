@@ -36,6 +36,6 @@ sudo cp ~/$repoName/configs/yaourt/yaourtrc /etc/yaourtrc
 cd ~ 
 sudo rm -rf $repoName/
 
-sudo mkdir /home/$userName/.tmp
+sudo mkdir ~/.tmp
 clear
 printf "Yaourt installed\n"
