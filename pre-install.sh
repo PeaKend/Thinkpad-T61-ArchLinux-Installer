@@ -34,25 +34,13 @@ clear
 
 ## prepares the GPT table and format the disks
 
-printf "Partitioning disks\n\n"
-
-clear
-
 printf "Deleting GPT and MBR\n\n"
-
-clear
 
 printf "x\nz\ny\ny\n" | gdisk $userDisk 1>/dev/null
 
-clear
-
 printf "Making GPT\n\n"
 
-clear
-
 printf "n\n\n\n+1M\nef02\nn\n\n\n+$userSwap\n8200\nn\n\n\n\n\nw\ny\n" | gdisk /dev/sda 1>/dev/null
-
-clear
 
 printf "Formating partitions\n\n"
 
