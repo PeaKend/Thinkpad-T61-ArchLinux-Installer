@@ -82,9 +82,13 @@ printf "Setting timezone (Argentina)\n\n"
 
 ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime
 
+clear
+
 printf "Running hwclock()\n\n"
 
 hwclock --systohc
+
+clear
 
 printf "Configuring locale.gen\n\n"
 
@@ -92,10 +96,14 @@ rm -rf /etc/locale.gen
 cp configs/locale/locale.gen /etc/locale.gen
 locale-gen
 
+clear
+
 printf "Setting language to english\n\n"
 
 rm -rf /etc/locale.conf
 cp configs/locale/locale.conf /etc/locale.conf
+
+clear
 
 printf "Making configurations\n\n"
 
