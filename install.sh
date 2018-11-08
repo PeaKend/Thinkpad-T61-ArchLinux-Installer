@@ -4,6 +4,8 @@
 
 repoName="thinkpad-t61-archlinux-installer"
 
+clear
+
 printf "Domainserver name: "
 read domainServer
 
