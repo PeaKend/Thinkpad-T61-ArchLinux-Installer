@@ -7,6 +7,8 @@ fi
 
 repoName="thinkpad-t61-archlinux-installer"
 
+clear
+
 cd ~/
 
 ## Installs yaourt
