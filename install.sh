@@ -118,7 +118,7 @@ clear
 
 printf "Go and make yourself a coffe, this is going to take a while\n\n"
 
-sleep 5
+sleep 3
 
 ## doesn't install a DE/WM
 
