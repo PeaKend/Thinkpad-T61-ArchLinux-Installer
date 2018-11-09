@@ -1,5 +1,7 @@
 #!/bin/bash
 
+userDisk=$(</userDisk)
+
 ## Asks for information and writes it on their files
 
 repoName="thinkpad-t61-archlinux-installer"
@@ -250,7 +252,7 @@ printf "Installing GRUB\n\n"
 
 rm -rf /etc/default/grub
 cp configs/grub/grub /etc/default/grub
-grub-install --target=i386-pc /dev/sda
+grub-install --target=i386-pc ${userDisk}
 
 clear
 
