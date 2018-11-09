@@ -40,7 +40,7 @@ printf "x\nz\ny\ny\n" | gdisk $userDisk 1>/dev/null
 
 printf "Making GPT\n\n"
 
-printf "n\n\n\n+1M\nef02\nn\n\n\n+$userSwap\n8200\nn\n\n\n\n\nw\ny\n" | gdisk $userDisk 1>/dev/null
+printf "n\n\n\n+1M\nef02\nn\n\n\n+$userSwap\n8200\nn\n\n\n\n\nw\ny\n" | gdisk $userDisk'2' 1>/dev/null
 
 printf "Formating partitions\n\n"
 
