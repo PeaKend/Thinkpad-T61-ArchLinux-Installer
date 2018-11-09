@@ -40,19 +40,19 @@ printf "x\nz\ny\ny\n" | gdisk $userDisk 1>/dev/null
 
 printf "Making GPT\n\n"
 
-printf "n\n\n\n+1M\nef02\nn\n\n\n+$userSwap\n8200\nn\n\n\n\n\nw\ny\n" | gdisk /dev/sda 1>/dev/null
+printf "n\n\n\n+1M\nef02\nn\n\n\n+$userSwap\n8200\nn\n\n\n\n\nw\ny\n" | gdisk $userDisk 1>/dev/null
 
 printf "Formating partitions\n\n"
 
-mkswap /dev/sda2 1>/dev/null
-mkfs.ext4 /dev/sda3 1>/dev/null
+mkswap $userDisk2 1>/dev/null
+mkfs.ext4 $userDisk3 1>/dev/null
 
 clear
 
 printf "Mounting file systems\n\n"
 
-swapon /dev/sda2 1>/dev/null
-mount /dev/sda3 /mnt 1>/dev/null
+swapon $userDisk2 1>/dev/null
+mount $userDisk3 /mnt 1>/dev/null
 
 clear
 
