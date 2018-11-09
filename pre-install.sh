@@ -97,6 +97,7 @@ printf "Generating the fstab file\n\n"
 genfstab -U /mnt >> /mnt/etc/fstab
 
 cp userDisk /mnt
+cp ${repoName}/ /mnt
 
 clear
 
@@ -106,7 +107,5 @@ printf "Clone the repo again and run ./install.sh\n\n"
 ## move the repo to /mnt
 
 cd ..
-
-mv ${repoName}/ /mnt
 
 arch-chroot /mnt ./${repoName}/install.sh
