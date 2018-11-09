@@ -260,6 +260,8 @@ printf "Making GRUB config file\n\n"
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
+rm -rf /userDisk
+
 clear
 
 ## moves the repository
