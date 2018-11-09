@@ -24,6 +24,9 @@ printf "In what disk do you want to install Arch Linux on? (eg: /dev/sda): "
 
 read userDisk
 
+## creates vars for disk partitions
+
+
 clear
 
 printf "Size of swap partition? (eg: 8G): " 
@@ -40,19 +43,19 @@ printf "x\nz\ny\ny\n" | gdisk $userDisk 1>/dev/null
 
 printf "Making GPT\n\n"
 
-printf "n\n\n\n+1M\nef02\nn\n\n\n+$userSwap\n8200\nn\n\n\n\n\nw\ny\n" | gdisk $userDisk'2' 1>/dev/null
+printf "n\n\n\n+1M\nef02\nn\n\n\n+$userSwap\n8200\nn\n\n\n\n\nw\ny\n" | gdisk ${userDisk}2 1>/dev/null
 
 printf "Formating partitions\n\n"
 
-mkswap $userDisk'2' 1>/dev/null
-mkfs.ext4 $userDisk'3' 1>/dev/null
+mkswap ${userDisk}2 1>/dev/null
+mkfs.ext4 ${userDisk}3 1>/dev/null
 
 clear
 
 printf "Mounting file systems\n\n"
 
-swapon $userDisk'2' 1>/dev/null
-mount $userDisk'3' /mnt 1>/dev/null
+swapon ${userDisk}2 1>/dev/null
+mount ${userDisk}3 /mnt 1>/dev/null
 
 clear
 
