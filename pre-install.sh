@@ -16,6 +16,10 @@ while true; do
 	sleep 2
 done
 
+## declares vars
+
+repoName="thinkpad-t61-archlinux-installer"
+
 ## reads user value for the amount of space on partitions
 
 clear
@@ -99,4 +103,10 @@ clear
 printf "Entering your new system\n\n"
 printf "Clone the repo again and run ./install.sh\n\n"
 
-arch-chroot /mnt
+## move the repo to /mnt
+
+cd ..
+
+mv ${repoName}/ /mnt
+
+arch-chroot /mnt ./${repoName}/install.sh
