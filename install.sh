@@ -108,7 +108,7 @@ cp configs/pacman/pacman.conf /etc/pacman.conf
 rm -rf /etc/pacman.d/mirrorlist
 cp configs/pacman/mirrorlist /etc/pacman.d/mirrorlist
 
-printf "$domainServer > /etc/hostname"
+printf "$domainServer" > /etc/hostname
 
 printf "\n127.0.0.1\tlocalhost\n::1\t\tlocalhost\n127.0.1.1\t$domainServer.localdomain\t$domainServer" >> /etc/hosts
 
