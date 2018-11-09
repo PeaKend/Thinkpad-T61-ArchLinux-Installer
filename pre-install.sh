@@ -24,9 +24,6 @@ printf "In what disk do you want to install Arch Linux on? (eg: /dev/sda): "
 
 read userDisk
 
-## creates vars for disk partitions
-
-
 clear
 
 printf "Size of swap partition? (eg: 8G): " 
