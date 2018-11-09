@@ -24,6 +24,10 @@ printf "In what disk do you want to install Arch Linux on? (eg: /dev/sda): "
 
 read userDisk
 
+touch userDisk
+
+printf "${userDisk}" >> userDisk
+
 clear
 
 printf "Size of swap partition? (eg: 8G): " 
@@ -87,6 +91,8 @@ clear
 printf "Generating the fstab file\n\n"
 
 genfstab -U /mnt >> /mnt/etc/fstab
+
+cp userDisk /mnt
 
 clear
 
