@@ -39,32 +39,8 @@ while true; do
     printf "Your choice: "
 	read deChoice
 
-	if [ "$deChoice" -eq "0" ]; then
+	if [ "${deChoice}" -ge "0" ] && ["${deChoice}" -le "6"]; then
 		break
-	fi
-
-	if [ "$deChoice" -eq "1" ]; then
-		break
-	fi
-
-	if [ "$deChoice" -eq "2" ]; then
-		break
-	fi
-
-	if [ "$deChoice" -eq "3" ]; then
-			break
-	fi
-
-	if [ "$deChoice" -eq "4" ]; then
-			break
-	fi
-
-	if [ "$deChoice" -eq "5" ]; then
-			break
-	fi
-
-	if [ "$deChoice" -eq "6" ]; then
-			break
 	fi
 
 	clear
