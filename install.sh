@@ -39,7 +39,7 @@ while true; do
     printf "Your choice: "
 	read deChoice
 
-	if [ "${deChoice}" -ge "0" ] && [ "${deChoice}" -le "6"]; then
+	if [ "${deChoice}" -ge "0" ] && [ "${deChoice}" -le "6" ]; then
 		break
 	fi
 
