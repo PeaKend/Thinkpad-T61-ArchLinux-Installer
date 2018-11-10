@@ -103,4 +103,4 @@ cp -r ../${repoName}/ /mnt
 
 
 
-arch-chroot /mnt ./${repoName}/install.sh
+arch-chroot /mnt ./${repoName}/debuginstall.sh
