@@ -1,14 +1,18 @@
 #!/bin/bash
 
+## inputs the user disk choosen at pre-install.sh
+
 userDisk=$(</userDisk)
 
-## Asks for information and writes it on their files
+## cd to repo after arch-chroot
 
 repoName="thinkpad-t61-archlinux-installer"
 
 cd $repoName/
 
 clear
+
+## asks for information and writes it on their files
 
 printf "Domainserver name: "
 read domainServer
@@ -94,7 +98,7 @@ printf "\n127.0.0.1\tlocalhost\n::1\t\tlocalhost\n127.0.1.1\t$domainServer.local
 
 clear
 
-## Downloads programs
+## downloads programs
 
 printf "Go and make yourself a coffe, this is going to take a while\n\n"
 
@@ -220,7 +224,7 @@ clear
 
 fi
 
-## Installs rcs
+## installs rcs
 
 printf "Installing rcs\n\n"
 
@@ -248,7 +252,7 @@ chown -hR $userName /home/$userName/
 
 clear
 
-## Installs and configures GRUB
+## installs and configures GRUB
 
 printf "Installing GRUB\n\n"
 
