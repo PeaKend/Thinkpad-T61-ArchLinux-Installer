@@ -40,6 +40,8 @@ read userSwap
 
 clear
 
+./scripts/environment-choose/environment-choose.sh
+
 ## prepares the GPT table and format the disks
 
 printf "Deleting current GPT and MBR tables from disk ${userDisk}\n\n"
@@ -100,8 +102,5 @@ cp userDisk /mnt
 cp -r ../${repoName}/ /mnt
 
 clear
-
-printf "Entering your new system\n\n"
-printf "Clone the repo again and run ./install.sh\n\n"
 
 arch-chroot /mnt ./${repoName}/install.sh

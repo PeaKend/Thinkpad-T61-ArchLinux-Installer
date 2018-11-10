@@ -33,8 +33,6 @@ printf "\n${userName} ALL=(ALL) ALL" >> /etc/sudoers
 
 clear
 
-scripts/environment-choose.sh
-
 deChoice=$(<deChoice)
 
 printf "Setting timezone (Argentina)\n\n"
