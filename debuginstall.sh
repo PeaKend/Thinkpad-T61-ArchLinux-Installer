@@ -10,20 +10,20 @@ repoName="thinkpad-t61-archlinux-installer"
 
 cd ${repoName}/
 
-clear
+
 
 ## asks for information and writes it on their files
 
 printf "Domainserver name: "
 read domainServer
 
-clear
+
 
 printf "Now lets create a password for root\n"
 
 passwd
 
-clear
+
 
 printf "New user name: "
 read userName
@@ -31,7 +31,7 @@ useradd -m -G wheel ${userName}
 passwd ${userName}
 printf "\n${userName} ALL=(ALL) ALL" >> /etc/sudoers
 
-clear
+
 
 deChoice=$(<deChoice)
 
@@ -39,13 +39,13 @@ printf "Setting timezone (Argentina)\n\n"
 
 ln -sf /usr/share/zoneinfo/America/Argentina/Buenos_Aires /etc/localtime
 
-clear
+
 
 printf "Running hwclock()\n\n"
 
 hwclock --systohc
 
-clear
+
 
 printf "Configuring locale.gen\n\n"
 
@@ -53,14 +53,14 @@ rm -rf /etc/locale.gen
 cp configs/locale/locale.gen /etc/locale.gen
 locale-gen
 
-clear
+
 
 printf "Setting language to english\n\n"
 
 rm -rf /etc/locale.conf
 cp configs/locale/locale.conf /etc/locale.conf
 
-clear
+
 
 printf "Making configurations\n\n"
 
@@ -73,7 +73,7 @@ printf "${domainServer}" > /etc/hostname
 
 printf "\n127.0.0.1\tlocalhost\n::1\t\tlocalhost\n127.0.1.1\t${domainServer}.localdomain\t${domainServer}" >> /etc/hosts
 
-clear
+
 
 ## downloads programs
 
@@ -89,7 +89,7 @@ pacman -S --noconfirm git bash-completion vim dialog wpa_supplicant intel-ucode 
 
 systemctl enable sddm
 
-clear
+
 
 fi
 
@@ -118,7 +118,7 @@ cp rcs/compton/compton.conf /home/$userName/.config/compton.conf
 rm -rf /home/$userName/.i3blocks.conf
 cp rcs/i3blocks/.i3blocks.conf /home/$userName/.i3blocks.conf
 
-clear
+
 
 fi
 
@@ -135,7 +135,7 @@ systemctl enable NetworkManager
 rm -rf /usr/lib/sddm/sddm.conf.d/default.conf
 cp configs/sddm/default.conf /usr/lib/sddm/sddm.conf.d/default.conf
 
-clear
+
 
 fi
 
@@ -152,7 +152,7 @@ systemctl enable NetworkManager
 rm -rf /usr/lib/sddm/sddm.conf.d/default.conf
 cp configs/sddm/default.conf /usr/lib/sddm/sddm.conf.d/default.conf
 
-clear
+
 
 fi
 
@@ -169,7 +169,7 @@ systemctl enable NetworkManager
 rm -rf /usr/lib/sddm/sddm.conf.d/default.conf
 cp configs/sddm/default.conf /usr/lib/sddm/sddm.conf.d/default.conf
 
-clear
+
 
 fi
 
@@ -183,7 +183,7 @@ systemctl enable gdm
 systemctl disable dhcpcd
 systemctl enable NetworkManager
 
-clear
+
 
 fi
 
@@ -197,7 +197,7 @@ systemctl enable gdm
 systemctl disable dhcpcd
 systemctl enable NetworkManager
 
-clear
+
 
 fi
 
@@ -227,7 +227,7 @@ cp rcs/gtk-3.0/settings.ini /home/${userName}/.config/gtk-3.0
 
 chown -hR ${userName} /home/${userName}/
 
-clear
+
 
 ## installs and configures GRUB
 
@@ -237,7 +237,7 @@ rm -rf /etc/default/grub
 cp configs/grub/grub /etc/default/grub
 grub-install --target=i386-pc ${userDisk}
 
-clear
+
 
 printf "Making GRUB config file\n\n"
 
@@ -245,7 +245,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 rm -rf /userDisk
 
-clear
+
 
 ## moves the repository
 
