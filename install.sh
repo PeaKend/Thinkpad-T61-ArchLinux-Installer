@@ -6,6 +6,8 @@ userDisk=$(</userDisk)
 
 repoName="thinkpad-t61-archlinux-installer"
 
+cd $repoName/
+
 clear
 
 printf "Domainserver name: "
