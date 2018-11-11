@@ -15,6 +15,7 @@ while true; do
 	read deChoice
 
 	if [ "${deChoice}" -ge "0" ] && [ "${deChoice}" -le "6" ]; then
+		touch ../../deChoice
 		echo "${deChoice}" > ../../deChoice
 		break
 	fi
