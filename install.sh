@@ -104,7 +104,7 @@ sleep 3
 
 if [ $deChoice -eq 0 ]; then
 
-pacman -S --noconfirm git bash-completion vim dialog wpa_supplicant intel-ucode grub wget unzip htop acpi alsa alsa-utils iw
+pacman -S --noconfirm git bash-completion vim dialog wpa_supplicant intel-ucode grub wget unzip htop acpi alsa alsa-utils iw networkmanager
 
 systemctl enable sddm
 
@@ -116,7 +116,7 @@ fi
 
 if [ $deChoice -eq 1 ]; then
 
-pacman -S --noconfirm git bash-completion vim dialog wpa_supplicant intel-ucode grub i3 dmenu xorg xorg-xinit firefox vlc rxvt-unicode xf86-video-intel thunderbird compton pulseaudio feh wget unzip nautilus htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils
+pacman -S --noconfirm git bash-completion vim dialog wpa_supplicant intel-ucode grub i3 dmenu xorg xorg-xinit firefox vlc rxvt-unicode xf86-video-intel thunderbird compton pulseaudio feh wget unzip nautilus htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils networkmanager
 
 systemctl enable sddm
 
@@ -145,11 +145,9 @@ fi
 
 if [ $deChoice -eq 2 ]; then
 
-pacman -S --noconfirm git bash-completion vim wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils plasma kde-applications
+pacman -S --noconfirm git bash-completion vim wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils plasma kde-applications networkmanager
 
 systemctl enable sddm
-systemctl disable dhcpcd
-systemctl enable NetworkManager
 
 rm -rf /usr/lib/sddm/sddm.conf.d/default.conf
 cp configs/sddm/default.conf /usr/lib/sddm/sddm.conf.d/default.conf
@@ -162,11 +160,9 @@ fi
 
 if [ $deChoice -eq 3 ]; then
 
-pacman -S --noconfirm git bash-completion vim wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils plasma 
+pacman -S --noconfirm git bash-completion vim wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils plasma networkmanager 
 
 systemctl enable sddm
-systemctl disable dhcpcd
-systemctl enable NetworkManager
 
 rm -rf /usr/lib/sddm/sddm.conf.d/default.conf
 cp configs/sddm/default.conf /usr/lib/sddm/sddm.conf.d/default.conf
@@ -179,11 +175,9 @@ fi
 
 if [ $deChoice -eq 4 ]; then
 
-pacman -S --noconfirm git bash-completion vim wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils plasma-desktop 
+pacman -S --noconfirm git bash-completion vim wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils plasma-desktop networkmanager 
 
 systemctl enable sddm
-systemctl disable dhcpcd
-systemctl enable NetworkManager
 
 rm -rf /usr/lib/sddm/sddm.conf.d/default.conf
 cp configs/sddm/default.conf /usr/lib/sddm/sddm.conf.d/default.conf
@@ -196,11 +190,9 @@ fi
 
 if [ $deChoice -eq 5 ]; then
 
-pacman -S --noconfirm git bash-completion vim wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils gnome gnome-extra gdm 
+pacman -S --noconfirm git bash-completion vim wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils gnome gnome-extra gdm networkmanager 
 
 systemctl enable gdm
-systemctl disable dhcpcd
-systemctl enable NetworkManager
 
 clear
 
@@ -210,17 +202,19 @@ fi
 
 if [ $deChoice -eq 6 ]; then
 
-pacman -S --noconfirm git bash-completion vim wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils gnome gdm 
+pacman -S --noconfirm git bash-completion vim wpa_supplicant intel-ucode grub xorg xorg-xinit firefox vlc xf86-video-intel thunderbird pulseaudio wget unzip htop adobe-source-code-pro-fonts noto-fonts-cjk acpi libreoffice sddm alsa alsa-utils gnome gdm networkmanager 
 
 systemctl enable gdm
-systemctl disable dhcpcd
-systemctl enable NetworkManager
 
 clear
 
 fi
 
-## Installs rcs
+## enables networkmanager and dhcpcd
+systemctl enable dhcpcd
+systemctl enable NetworkManager
+
+## installs rcs
 
 printf "Installing rcs\n\n"
 
