@@ -214,6 +214,8 @@ fi
 systemctl enable dhcpcd
 systemctl enable NetworkManager
 
+clear
+
 ## installs rcs
 
 printf "Installing rcs\n\n"
